@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updated Layout</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 200px auto;
+            grid-template-rows: 80px 50px auto 80px;
+            height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: #2d4d1d;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            grid-column: span 2;
+        }
+
+        .logo {
+
+            height: 80px;
+            width: 100px;
+            background: url("") no-repeat center;
+            background-size: contain;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            margin-right: 5px;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+        .logoImage{
+            height: 50px;
+            width: 60px;
+            margin-left: 5px;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            width: 50%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            background: #5b8a3c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+
+        /* Navigation Sidebar (Left) */
+        .sidebar {
+            background: #98c379;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
+            grid-row: span 4;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            background: #b5e08b;
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            height: 82px;
+        }
+        .sidebar a:hover{
+            background-color: #5b8a3c;
+        }
+
+        /* Navigation Bar (Below Header) */
+        .navbar {
+            display: flex;
+            background: #c5d8a4;
+            padding: 10px;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            grid-column: span 2;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            background: #5b8a3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background: #3a6123;
+        }
+
+        /* Dropdown on Hover */
+        .dropdown-container {
+            position: relative;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background: lightgray;
+            padding: 10px;
+            width: 160px;
+            top: 40px;
+            left: 0;
+            border-radius: 5px;
+        }
+
+        .dropdown-container:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 5px;
+            color: rgb(128, 0, 38);
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        .main {
+            background: #eaf3d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            height: 300px;
+        }
+
+        .card {
+            background: #27408b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background: orange;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #27408b;
+            display: flex;
+            align-items: center;
+            justify-content:end;
+            padding: 10px;
+            gap: 10px;
+            grid-column: span 2;
+        }
+
+        .footer img {
+            width: 40px;
+            height: 40px;
+            cursor:pointer;
+           
+          
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img class="logoImage" src="https://t3.ftcdn.net/jpg/05/03/08/02/360_F_503080284_AMRw8IC8FO9BN5yL1BSTKo3MZGjdf0GG.jpg" alt=""> 
+                <label>ZEPTO'S</label></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search here">
+                <button>Go</button>
+            </div>
+        </header>
+
+        <!-- Horizontal Navbar Below Header -->
+        <nav class="navbar">
+            <div class="dropdown-container">
+                <a href="#">HOME</a>
+                <div class="dropdown">
+                    <a href="#">SHOP</a>
+                    <h2>Welcome to Zepto</h2>
+                    <p>Explore all types of shopping categories here.</p>
+                </div>
+            </div>
+            <div class="dropdown-container">
+                <a href="#">SHOP</a>
+                <div class="dropdown">
+                    <h2>Shop Categories</h2>
+                     <p>Find products for Men, Women, and Kids.</p>
+                     <a href="#">Men</a>
+                     <a href="#">Women</a>
+                     <a href="#">Kids</a>
+                </div>
+            </div>
+            <div class="dropdown-container">
+                <a href="#">OFFER</a>
+                <div class="dropdown">
+                    <h2>Best Deals</h2>
+        <p>Check out the latest discounts and offers.</p>
+        <a href="#">latest offers</a>
+        <a href="#">discount</a>
+                </div>
+            </div>
+            <div class="dropdown-container">
+                <a href="#">CONTACT</a>
+                <div class="dropdown">
+                    <h2>Contact Us</h2>
+        <p>Email: support@zepto.com</p>
+        <p>Phone: +923 456 7820</p>
+                </div>
+            </div>
+            
+        </nav>
+
+        <!-- Left Sidebar (Vertical Links) -->
+        <nav class="sidebar">
+            <a href="https://www.flipkart.com/all/~cs-21e789349087c946d1b57cb0a6372ff1/pr?sid=ajy,buh&marketplace=FLIPKART&restrictLocale=true"target="_blank">Smart Watches</a>
+            <a href="https://www.flipkart.com/laptops-store?otracker=nmenu_sub_Electronics_0_Laptops"target="_blank">Laptops</a>
+            <a href="https://www.flipkart.com/home-decor/pr?sid=arb&marketplace=FLIPKART&otracker=nmenu_sub_Home%20%26%20Furniture_0_Home%20Decor"target="_blank">Home Decor</a>
+            <a href="https://www.flipkart.com/books-store?otracker=nmenu_sub_Sports%2C%20Books%20%26%20More_0_Books"target="_blank">Books</a>
+            <a href="https://www.flipkart.com/toysclp-store?otracker=nmenu_sub_Baby%20%26%20Kids_0_Toys"target="_blank">Toys</a>
+            <a href="https://www.flipkart.com/beauty-and-grooming/pr?sid=g9b&p[]=facets.serviceability%5B%5D%3Dtrue&otracker=categorytree&otracker=nmenu_sub_Women_0_Beauty%20%26%20Grooming"target="_blank">Grooming</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="grid-container">
+                <div class="card">Card information <button class="book-now">Book Now</button></div>
+                <div class="card">Card information <button class="book-now">Book Now</button></div>
+                <div class="card">Card information <button class="book-now">Book Now</button></div>
+                <div class="card">Card information <button class="book-now">Book Now</button></div>
+                <div class="card">Card information <button class="book-now">Book Now</button></div>
+                <div class="card">Card information <button class="book-now">Book Now</button></div>
+                <div class="card">Card information <button class="book-now">Book Now</button></div>
+                <div class="card">Card information <button class="book-now">Book Now</button></div>
+                <div class="card">Card information <button class="book-now">Book Now</button></div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <a href="https://www.linkedin.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHP2W0X8Bj9Wwou8Y5Iv2q_Aa-nME9SMwEAA&s" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQxOMUNq_G-2Tqqcm2l1UYB3WCjRHx6KI2xg&s" alt="Facebook">
+            </a>
+        </footer>
+        
+    </div>
+</body>
+</html>
